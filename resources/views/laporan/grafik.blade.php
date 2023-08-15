@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{ __('Laporan') }}
+            {{ __('Grafik Laporan') }}
         </h2>
     </x-slot>
 
@@ -28,7 +28,7 @@
                                             <div class="mx-auto w-full overflow-hidden">
                                                 <h2
                                                     class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight text-center py-4">
-                                                    {{ __('Transaksi') }}
+                                                    {{ __('Grafik Laporan ') }}
                                                 </h2>
                                                 <canvas id="line-transaksi"></canvas>
                                             </div>
