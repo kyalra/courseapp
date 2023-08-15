@@ -5,6 +5,8 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\InstructorController;
 use App\Http\Controllers\QualificationController;
 use App\Http\Controllers\TransaksiController;
+use App\Http\Controllers\LaporanController;
+
 use App\Models\Course;
 use Illuminate\Support\Facades\Route;
 
@@ -56,6 +58,9 @@ Route::middleware(['auth','verified','role:admin'])->group(function () {
     Route::get('/qualification/destroy/{id}', [QualificationController::class, 'destroy'])->name('qualification.destroy');
     Route::get('/qualification/{id}', [QualificationController::class, 'view'])->name('qualification.view');
     Route::post('/qualification', [QualificationController::class, 'store'])->name('qualification.store');
+
+    Route::get('/laporan', [LaporanController::class, 'index'])->name('laporan.index');
+    Route::get('/laporan-grafik', [LaporanController::class, 'grafik'])->name('laporan.grafik');
 
 
 

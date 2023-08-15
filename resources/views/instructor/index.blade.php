@@ -42,13 +42,13 @@
                                        {{$item->instructor_name}}
                                     </th>
                                     <td class="px-6 py-4 text-center">
-                                       {{$item->age}}
+                                       {{$item->age}} Tahun
                                     </td>
                                     <td class="px-6 py-4 text-center">
                                         {{$item->jenis_kelamin}}
                                     </td>
                                     <td class="px-6 py-4 text-center">
-                                        {{$item->exp_year}}
+                                        {{$item->exp_year}} Tahun
                                     </td>
                                     <td class="px-6 py-4 text-center">
                                         {{$item->exp_desc}}

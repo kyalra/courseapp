@@ -35,6 +35,16 @@
                         {{ __('Qualification') }}
                     </x-nav-link>
                 </div>
+                <!-- Navigation Links -->
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('laporan.index')" :active="request()->routeIs('laporan.index')">
+                        {{ __('Laporan') }}
+                    </x-nav-link>
+                </div> <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-nav-link :href="route('laporan.grafik')" :active="request()->routeIs('laporan.grafik')">
+                        {{ __('Grafik Transaksi') }}
+                    </x-nav-link>
+                </div>
                 @endif
                @if (Auth::user()->role =='user')
                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">

@@ -59,7 +59,7 @@ class TransaksiController extends Controller
        
         $transactionCode = Str::random(10 - strlen('TX') - strlen(''));
         $transactionDate = Carbon::now();
-        $member = ['silver' => 5, 'gold' => 10, 'platinum' => 15,];
+        $member = ['silver' => 5, 'gold' => 10, 'platinum' => 15,'notmember' =>0];
 
         $data = new Transaksi();
         $data->trans_code = $transactionCode;
