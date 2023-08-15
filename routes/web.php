@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth','verified','role:admin'])->group(function () {
     Route::get('/course', [CourseController::class, 'index'])->name('course.index');
     Route::get('/course/create', [CourseController::class, 'create'])->name('course.create');
     Route::get('/course/edit/{id}', [CourseController::class, 'edit'])->name('course.edit');
@@ -57,9 +57,11 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/qualification/{id}', [QualificationController::class, 'view'])->name('qualification.view');
     Route::post('/qualification', [QualificationController::class, 'store'])->name('qualification.store');
 
+
+
+});
+Route::middleware('auth','verified','role:user')->group(function () {
     Route::get('/transaksi', [TransaksiController::class, 'index'])->name('transaksi.index');
     Route::post('/transaksi/beli', [TransaksiController::class, 'beli'])->name('transaksi.beli');
-
-
 });
 require __DIR__.'/auth.php';

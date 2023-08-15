@@ -9,14 +9,15 @@
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800 dark:text-gray-200" />
                     </a>
                 </div>
-
+                
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
-                <!-- Navigation Links -->
+                @if ( Auth::user()->role =='admin' )
+                     <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('course.index')" :active="request()->routeIs('course.index')">
                         {{ __('Course') }}
@@ -34,11 +35,15 @@
                         {{ __('Qualification') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                @endif
+               @if (Auth::user()->role =='user')
+               <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('transaksi.index')" :active="request()->routeIs('transaksi.index')">
                         {{ __('Transaksi') }}
                     </x-nav-link>
-                </div>
+                 </div>
+               @endif
+                
             </div>
 
             <!-- Settings Dropdown -->
